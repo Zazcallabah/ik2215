@@ -1,3 +1,5 @@
+# https://help.ubuntu.com/community/BIND9ServerHowto#Primary_Master_Server
+
 sudo apt-get install bind9
 
 
