@@ -1,8 +1,6 @@
 # https://help.ubuntu.com/community/dhcp3-server
 
-sudo apt-get install isc-dhcp-server
-
-
-sudo cp ./conf/dhcp3.conf /etc/dhcp3/dhcpd.conf
-
-sudo service dhcp3-server start
+export DEBIAN_FRONTEND=noninteractive
+apt-get -q -y install isc-dhcp-server
+cp ./conf/dhcp3.conf /etc/dhcp3/dhcpd.conf
+service dhcp3-server start
