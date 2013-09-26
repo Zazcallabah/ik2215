@@ -6,7 +6,6 @@ On a new server
     sudo apt-get install git
     git clone https://github.com/Zazcallabah/ik2215.git
     cd ik2215
-    chmod +x *.sh
 
 Then just run the shell scripts for the type of server you want to create.
 Example:
