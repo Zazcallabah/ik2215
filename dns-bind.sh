@@ -1,12 +1,8 @@
 # https://help.ubuntu.com/community/BIND9ServerHowto#Primary_Master_Server
 
-sudo apt-get install bind9
+export DEBIAN_FRONTEND=noninteractive
+apt-get -q -y install bind9
 
+cp ./conf/named.conf* /etc/bind/
 
-sudo service bind9 start
-
-echo "  zone \"example.com\" {
-             type master;
-             file "/etc/bind/db.example.com";
-        };" >> /var/tmp/named.conf.local
-
+service bind9 start
