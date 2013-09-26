@@ -8,5 +8,7 @@ On a new server
     cd ik2215
 
 Then just run the shell scripts for the type of server you want to create.
+
 Example:
+
     sudo ./nginx.sh
