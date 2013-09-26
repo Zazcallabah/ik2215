@@ -1,22 +1,10 @@
-# example setup script
-
-sudo apt-get install nginx
-sudo service nginx start
-
-# this just checks if nginx started ok
-ifconfig eth0 | grep inet | awk '{ print $2 }'
-
-#write config
-echo "server {
-    listen          80 default_server;
- 
-    index           index.html;
-    root            /var/www/default;
-}" > /var/tmp/nginx.conf
-
+# install service
+export DEBIAN_FRONTEND=noninteractive
+apt-get -q -y install nginx
 
 #update this location to be actual nginx config location
-sudo mv /var/tmp/nginx.conf /usr/local/nginx/conf/nginx.conf
+cp conf/nginx.conf /etc/nginx/nginx.conf
+mkdir -p /var/www/default
 
-#set nginx service to start when computer starts
-update-rc.d nginx defaults
+#start service
+service nginx start
