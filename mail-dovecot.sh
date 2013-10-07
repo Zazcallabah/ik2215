@@ -1,5 +1,7 @@
 # http://wiki2.dovecot.org/FrontPage
 # https://help.ubuntu.com/community/Dovecot
+# http://wiki2.dovecot.org/HowTo/SimpleVirtualInstall
+
 
 #install service
 export DEBIAN_FRONTEND=noninteractive
