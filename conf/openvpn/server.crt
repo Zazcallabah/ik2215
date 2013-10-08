@@ -1,0 +1,76 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=SE, ST=111, L=Stockholm, O=ISPGroup2, OU=changeme, CN=changeme/name=changeme/emailAddress=postmaster@isp2
+        Validity
+            Not Before: Oct  8 10:08:26 2013 GMT
+            Not After : Oct  6 10:08:27 2023 GMT
+        Subject: C=SE, ST=111, L=Stockholm, O=ISPGroup2, OU=changeme, CN=changeme/name=changeme/emailAddress=postmaster@isp2
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:b4:68:3e:c9:6b:4a:96:10:d9:b7:13:ea:cd:b0:
+                    75:94:2a:6c:44:68:47:8f:8b:68:8c:ba:da:2b:ba:
+                    11:75:ff:ec:83:fe:6c:af:25:c0:cf:4e:f0:72:41:
+                    b3:3b:e2:c6:e5:22:af:7e:8c:2d:6f:cf:e8:88:f4:
+                    4e:1a:e3:b3:63:f5:57:bc:4b:fe:cb:6e:2e:bc:cc:
+                    2c:67:74:35:40:20:cf:25:18:7b:39:04:cc:72:77:
+                    a5:e8:eb:fb:fe:8c:7b:7b:fc:02:9d:66:e0:ff:e0:
+                    8c:fb:9f:f9:6d:87:0e:99:ad:b5:aa:75:88:d5:d6:
+                    54:06:05:2d:2f:4c:f2:47:4b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                Easy-RSA Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                74:D5:C5:80:FE:6D:8E:78:9D:00:51:3A:37:C2:BF:6A:C6:C3:D9:7F
+            X509v3 Authority Key Identifier: 
+                keyid:86:E4:CC:B3:04:E7:A6:5C:D3:AC:C6:16:E8:48:2C:B6:81:81:29:55
+                DirName:/C=SE/ST=111/L=Stockholm/O=ISPGroup2/OU=changeme/CN=changeme/name=changeme/emailAddress=postmaster@isp2
+                serial:DB:10:88:5B:B5:D1:88:13
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+    Signature Algorithm: sha1WithRSAEncryption
+         02:67:21:60:d7:a2:e4:fe:fc:18:4b:c2:3c:3e:f2:e8:e0:6a:
+         59:4c:e2:46:2c:3f:71:3a:f4:1b:64:b3:46:15:9a:68:86:f6:
+         6e:98:0f:4b:1e:e4:34:9f:15:f3:f3:f5:a7:59:2d:ec:76:2a:
+         b2:6e:74:3a:16:0a:18:87:d6:b1:b2:ce:31:7b:1e:3a:02:85:
+         ce:c4:d3:01:cf:8b:8b:92:ce:88:d1:37:dd:52:b1:bd:67:25:
+         19:65:e7:ed:a9:97:71:b6:95:e4:da:8e:ab:cf:0a:3f:ac:a6:
+         ff:41:24:fe:d4:16:df:19:19:b0:76:70:02:1c:14:2f:50:c0:
+         42:cf
+-----BEGIN CERTIFICATE-----
+MIIEHzCCA4igAwIBAgIBATANBgkqhkiG9w0BAQUFADCBnDELMAkGA1UEBhMCU0Ux
+DDAKBgNVBAgTAzExMTESMBAGA1UEBxMJU3RvY2tob2xtMRIwEAYDVQQKEwlJU1BH
+cm91cDIxETAPBgNVBAsTCGNoYW5nZW1lMREwDwYDVQQDEwhjaGFuZ2VtZTERMA8G
+A1UEKRMIY2hhbmdlbWUxHjAcBgkqhkiG9w0BCQEWD3Bvc3RtYXN0ZXJAaXNwMjAe
+Fw0xMzEwMDgxMDA4MjZaFw0yMzEwMDYxMDA4MjdaMIGcMQswCQYDVQQGEwJTRTEM
+MAoGA1UECBMDMTExMRIwEAYDVQQHEwlTdG9ja2hvbG0xEjAQBgNVBAoTCUlTUEdy
+b3VwMjERMA8GA1UECxMIY2hhbmdlbWUxETAPBgNVBAMTCGNoYW5nZW1lMREwDwYD
+VQQpEwhjaGFuZ2VtZTEeMBwGCSqGSIb3DQEJARYPcG9zdG1hc3RlckBpc3AyMIGf
+MA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC0aD7Ja0qWENm3E+rNsHWUKmxEaEeP
+i2iMutoruhF1/+yD/myvJcDPTvByQbM74sblIq9+jC1vz+iI9E4a47Nj9Ve8S/7L
+bi68zCxndDVAIM8lGHs5BMxyd6Xo6/v+jHt7/AKdZuD/4Iz7n/lthw6ZrbWqdYjV
+1lQGBS0vTPJHSwIDAQABo4IBbTCCAWkwCQYDVR0TBAIwADARBglghkgBhvhCAQEE
+BAMCBkAwNAYJYIZIAYb4QgENBCcWJUVhc3ktUlNBIEdlbmVyYXRlZCBTZXJ2ZXIg
+Q2VydGlmaWNhdGUwHQYDVR0OBBYEFHTVxYD+bY54nQBROjfCv2rGw9l/MIHRBgNV
+HSMEgckwgcaAFIbkzLME56Zc06zGFuhILLaBgSlVoYGipIGfMIGcMQswCQYDVQQG
+EwJTRTEMMAoGA1UECBMDMTExMRIwEAYDVQQHEwlTdG9ja2hvbG0xEjAQBgNVBAoT
+CUlTUEdyb3VwMjERMA8GA1UECxMIY2hhbmdlbWUxETAPBgNVBAMTCGNoYW5nZW1l
+MREwDwYDVQQpEwhjaGFuZ2VtZTEeMBwGCSqGSIb3DQEJARYPcG9zdG1hc3RlckBp
+c3AyggkA2xCIW7XRiBMwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWg
+MA0GCSqGSIb3DQEBBQUAA4GBAAJnIWDXouT+/BhLwjw+8ujgallM4kYsP3E69Btk
+s0YVmmiG9m6YD0se5DSfFfPz9adZLex2KrJudDoWChiH1rGyzjF7HjoChc7E0wHP
+i4uSzojRN91Ssb1nJRll5+2pl3G2leTajqvPCj+spv9BJP7UFt8ZGbB2cAIcFC9Q
+wELP
+-----END CERTIFICATE-----
