@@ -5,7 +5,7 @@ apt-get -q -y install openvpn
 
 #copy configuration files
 cp -r conf/openvpn/easy-rsa /etc/openvpn/
-cp conf/openvpn/ca.crt conf/openvpn/dh1024.pem conf/openvpn/server.conf conf/openvpn/server.crt conf/openvpn/server.key
+cp conf/openvpn/ca.crt conf/openvpn/dh1024.pem conf/openvpn/server.conf conf/openvpn/server.crt conf/openvpn/server.key /etc/openvpn/
 
 #security and newuser accounts
 mkdir /etc/openvpn/jail
