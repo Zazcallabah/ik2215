@@ -1,0 +1,73 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=SE, ST=111, L=Stockholm, O=ISPGroup2, OU=changeme, CN=changeme/name=changeme/emailAddress=postmaster@isp2
+        Validity
+            Not Before: Oct  8 10:39:03 2013 GMT
+            Not After : Oct  6 10:39:03 2023 GMT
+        Subject: C=SE, ST=111, L=Stockholm, O=ISPGroup2, OU=changeme, CN=gr2-user1/name=changeme/emailAddress=postmaster@isp2
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:d2:5a:1e:69:16:a2:63:10:ed:e4:c8:2f:ec:2c:
+                    ba:25:2f:9d:02:a5:31:51:e7:ac:5a:d3:a0:36:42:
+                    dc:7c:81:6c:45:6d:f0:7c:69:04:cc:a2:b6:c5:38:
+                    50:ef:c2:73:5d:27:f0:cc:c5:c7:5c:4e:0d:05:af:
+                    2b:97:bd:89:83:cf:fe:6e:06:c9:28:fd:f4:7e:8f:
+                    25:8f:34:5c:75:e9:2e:ba:a7:36:44:eb:f9:5c:7c:
+                    27:c1:f0:5c:b6:3f:c4:d3:3e:5f:fe:29:a2:98:fb:
+                    d1:63:5b:93:8b:78:46:72:f2:97:9c:db:a4:00:80:
+                    0a:e8:cd:90:cb:af:c7:ef:71
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                3A:D2:22:5D:5B:C1:3A:C8:6E:F5:82:67:C9:A9:BA:6F:C0:88:0E:F7
+            X509v3 Authority Key Identifier: 
+                keyid:86:E4:CC:B3:04:E7:A6:5C:D3:AC:C6:16:E8:48:2C:B6:81:81:29:55
+                DirName:/C=SE/ST=111/L=Stockholm/O=ISPGroup2/OU=changeme/CN=changeme/name=changeme/emailAddress=postmaster@isp2
+                serial:DB:10:88:5B:B5:D1:88:13
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha1WithRSAEncryption
+         78:1a:a8:14:2b:cb:2f:98:99:d3:6e:b1:49:fa:6d:70:22:c9:
+         75:45:9a:d5:8e:e5:bd:d5:09:fc:71:23:56:ef:37:48:d3:eb:
+         0c:f9:31:27:f5:7b:50:99:22:31:96:72:af:f4:53:9a:62:74:
+         33:85:40:94:d5:eb:5a:00:98:05:f0:37:c8:8f:97:89:10:e1:
+         ff:10:5d:20:b7:f8:83:ba:a5:51:74:75:e9:07:aa:be:9f:0a:
+         95:b7:d3:78:26:16:c2:ed:fe:ad:d5:4b:80:6e:54:11:d1:ea:
+         4c:7c:82:af:92:f6:41:13:11:42:ac:e4:04:8e:67:fc:2f:4a:
+         5f:f1
+-----BEGIN CERTIFICATE-----
+MIIEBjCCA2+gAwIBAgIBAjANBgkqhkiG9w0BAQUFADCBnDELMAkGA1UEBhMCU0Ux
+DDAKBgNVBAgTAzExMTESMBAGA1UEBxMJU3RvY2tob2xtMRIwEAYDVQQKEwlJU1BH
+cm91cDIxETAPBgNVBAsTCGNoYW5nZW1lMREwDwYDVQQDEwhjaGFuZ2VtZTERMA8G
+A1UEKRMIY2hhbmdlbWUxHjAcBgkqhkiG9w0BCQEWD3Bvc3RtYXN0ZXJAaXNwMjAe
+Fw0xMzEwMDgxMDM5MDNaFw0yMzEwMDYxMDM5MDNaMIGdMQswCQYDVQQGEwJTRTEM
+MAoGA1UECBMDMTExMRIwEAYDVQQHEwlTdG9ja2hvbG0xEjAQBgNVBAoTCUlTUEdy
+b3VwMjERMA8GA1UECxMIY2hhbmdlbWUxEjAQBgNVBAMTCWdyMi11c2VyMTERMA8G
+A1UEKRMIY2hhbmdlbWUxHjAcBgkqhkiG9w0BCQEWD3Bvc3RtYXN0ZXJAaXNwMjCB
+nzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0loeaRaiYxDt5Mgv7Cy6JS+dAqUx
+UeesWtOgNkLcfIFsRW3wfGkEzKK2xThQ78JzXSfwzMXHXE4NBa8rl72Jg8/+bgbJ
+KP30fo8ljzRcdekuuqc2ROv5XHwnwfBctj/E0z5f/imimPvRY1uTi3hGcvKXnNuk
+AIAK6M2Qy6/H73ECAwEAAaOCAVMwggFPMAkGA1UdEwQCMAAwLQYJYIZIAYb4QgEN
+BCAWHkVhc3ktUlNBIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUOtIi
+XVvBOshu9YJnyam6b8CIDvcwgdEGA1UdIwSByTCBxoAUhuTMswTnplzTrMYW6Egs
+toGBKVWhgaKkgZ8wgZwxCzAJBgNVBAYTAlNFMQwwCgYDVQQIEwMxMTExEjAQBgNV
+BAcTCVN0b2NraG9sbTESMBAGA1UEChMJSVNQR3JvdXAyMREwDwYDVQQLEwhjaGFu
+Z2VtZTERMA8GA1UEAxMIY2hhbmdlbWUxETAPBgNVBCkTCGNoYW5nZW1lMR4wHAYJ
+KoZIhvcNAQkBFg9wb3N0bWFzdGVyQGlzcDKCCQDbEIhbtdGIEzATBgNVHSUEDDAK
+BggrBgEFBQcDAjALBgNVHQ8EBAMCB4AwDQYJKoZIhvcNAQEFBQADgYEAeBqoFCvL
+L5iZ026xSfptcCLJdUWa1Y7lvdUJ/HEjVu83SNPrDPkxJ/V7UJkiMZZyr/RTmmJ0
+M4VAlNXrWgCYBfA3yI+XiRDh/xBdILf4g7qlUXR16Qeqvp8KlbfTeCYWwu3+rdVL
+gG5UEdHqTHyCr5L2QRMRQqzkBI5n/C9KX/E=
+-----END CERTIFICATE-----
