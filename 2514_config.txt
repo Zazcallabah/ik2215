@@ -1,0 +1,45 @@
+#date: 13/10/08
+#version: 0.1
+#author: Joël
+#team: 2
+#descr: This is the router configuration for router 2514. To configure the router, copy the code after the "start" comment and paste it to the minicom terminal, which is connected to the router 2514. (Actually, i'm not sure if it works like this but i suppose??)
+
+#Open issues:
+# - How do you send parameters (after reload > no)
+#start
+
+
+enable
+erase startup--config
+reload
+
+enable
+configure terminal
+
+interface s0
+ip address 10.2.8.2 255.255.255.252
+no shutdown
+exit
+
+interface s1
+ip address 10.2.8.5 255.255.255.252
+no shutdown
+exit
+
+interface eth0
+ip address 10.2.0..1 255.255.255.0
+no shutdown
+exit
+
+interface eth1
+ip address 10.2.8.8 255.255.255.252
+no shutdown
+exit
+
+router ospf 1
+network 10.2.8.0 0.0.0.3 area 0
+network 10.2.8.4 0.0.0.3 area 0
+network 10.2.0.0 0.0.0.255 area 0
+network 10.2.8.8 0.0.0.3 area 0
+
+copy running-config startup-config
