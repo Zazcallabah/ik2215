@@ -1,11 +1,13 @@
 #date: 13/10/08
-#version: 0.1
+#version: 0.2
 #author: Joël
 #team: 2
 #descr: This is the router configuration for router 2514. To configure the router, copy the code after the "start" comment and paste it to the minicom terminal, which is connected to the router 2514. (Actually, i'm not sure if it works like this but i suppose??)
 
 #Open issues:
 # - How do you send parameters (after reload > no)
+# - Loopback 0 address is not defined yet (placeholder: "....")
+
 #start
 
 
@@ -36,10 +38,21 @@ ip address 10.2.8.8 255.255.255.252
 no shutdown
 exit
 
+interface loopback0
+ip address ....
+ip pim spare-dense-mode
+no shutdown
+exit
+
 router ospf 1
 network 10.2.8.0 0.0.0.3 area 0
 network 10.2.8.4 0.0.0.3 area 0
 network 10.2.0.0 0.0.0.255 area 0
 network 10.2.8.8 0.0.0.3 area 0
+
+ip msdp peer .... connect-source loopback0
+ip msdp mesh-group isp2MeshGroup ....
+ip msdp originatoor-id loopback0
+
 
 copy running-config startup-config
