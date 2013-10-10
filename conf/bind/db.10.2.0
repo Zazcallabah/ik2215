@@ -2,7 +2,7 @@
 ; BIND reverse data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	localhost. postmaster.isp2.lab. (
+@	IN	SOA	ns.isp2.lab. postmaster.isp2.lab. (
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry

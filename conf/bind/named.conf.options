@@ -14,10 +14,11 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	// forwarders {
-	// 	10.0.0.11;
-	//  10.0.0.21;
-	// };
+	 //Set as forwarders the root and the lab dns
+	 forwarders {
+	 	10.0.0.11;
+	  	10.0.0.21;
+	 };
 
 	auth-nxdomain no;    # conform to RFC1035
 	listen-on-v6 { any; };

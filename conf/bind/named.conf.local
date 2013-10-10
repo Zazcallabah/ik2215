@@ -13,7 +13,7 @@
 //zone "group4.lab" { type master; file "/etc/bind/db.group4.lab"; };
 //zone "group5.lab" { type master; file "/etc/bind/db.group5.lab"; };
 //zone "group6.lab" { type master; file "/etc/bind/db.group6.lab"; };
-zone "isp2.lab" {type master; file "/ets/bind/db.group6.lab"; };
+zone "isp2.lab" {type master; file "/ets/bind/db.isp2.lab"; };
 
 
 //zone "1.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.1"; };
@@ -22,5 +22,5 @@ zone "isp2.lab" {type master; file "/ets/bind/db.group6.lab"; };
 //zone "4.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.4"; };
 //zone "5.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.5"; };
 //zone "6.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.6"; };
-zone "8.2.10.in-addr.arpa" { type master; file "/etc/bind/db.10.2.8"; };
+zone "0.2.10.in-addr.arpa" { type master; file "/etc/bind/db.10.2.0"; };
 
