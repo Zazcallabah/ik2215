@@ -46,3 +46,10 @@ network 10.2.8.0 0.0.0.3 area 0
 network 10.2.8.33 0.0.0.0 area 0
 
 copy running-config startup-config
+
+//Not tested
+router bgp 12
+neighbor 10.0.16.5 remote-as 1
+redistribute ospf 1
+
+
