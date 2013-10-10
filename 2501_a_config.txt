@@ -10,7 +10,7 @@
 
 
 enable
-erase startup--config
+erase startup-config
 reload
 
 enable
