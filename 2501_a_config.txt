@@ -1,0 +1,37 @@
+#date: 13/10/08
+#version: 0.1
+#author: Joël
+#team: 2
+#descr: This is the router configuration for router 2501_a wich is the active router of the virtual router 10.2.8.19. To configure the router, copy the code after the "start" comment and paste it to the minicom terminal, which is connected to the router 2501. (Actually, i'm not sure if it works like this but i suppose??)
+
+#Open issues:
+# - How do you send parameters (after reload > no)
+#start
+
+
+enable
+erase startup--config
+reload
+
+enable
+configure terminal
+
+interface eth0
+ip address 10.2.8.17 255.255.255.252
+standby 1 ip 10.2.8.19
+standby 1 preempt
+standby 1 priority 110
+no shutdown
+exit
+
+interface s0
+ip address 10.2.8.6 255.255.255.252
+no shutdown
+exit
+
+router ospf 1
+network 10.2.8.4 0.0.0.3 area 0
+network 10.2.8.8 0.0.0.3 area 0
+network 10.2.8.16 0.0.0.15 area 0
+
+copy running-config startup-config
