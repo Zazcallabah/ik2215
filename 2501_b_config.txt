@@ -26,7 +26,7 @@ standby 100 track eth0
 no shutdown
 exit
 
-interface eth0
+interface s0
 ip address 10.2.8.10 255.255.255.252
 no shutdown
 exit
