@@ -41,17 +41,20 @@ ip address 10.2.8.2 255.255.255.252
 no shutdown
 exit
 
+ip multicast routing
 interface loopback0
-ip address ....
-ip pim spare-dense-mode
+ip address 10.2.8.34 255.255.255.255
 no shutdown
+ip pim spare-dense-mode
 exit
 
+router-id 10.2.8.34
 router ospf 1
 network 10.2.8.0 0.0.0.3 area 0
 network 10.2.8.4 0.0.0.3 area 0
 network 10.2.0.0 0.0.0.255 area 0
 network 10.2.8.8 0.0.0.3 area 0
+network 10.2.8.34 0.0.0.0 area 0
 
 ip msdp peer .... connect-source loopback0
 ip msdp mesh-group isp2MeshGroup ....
