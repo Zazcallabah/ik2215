@@ -29,7 +29,7 @@ no shutdown
 exit
 
 interface eth0
-ip address 10.2.0..1 255.255.255.0
+ip address 10.2.0.1 255.255.255.0
 no shutdown
 exit
 
