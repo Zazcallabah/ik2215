@@ -1,0 +1,25 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	localhost. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.group5.lab.
+1	IN	PTR	gw.group5.lab.
+2	IN	PTR	ns.group5.lab.
+
+11	IN	PTR	client1.group5.lab.
+12	IN	PTR	client2.group5.lab.
+13	IN	PTR	client3.group5.lab.
+14	IN	PTR	client4.group5.lab.
+15	IN	PTR	client5.group5.lab.
+16	IN	PTR	client6.group5.lab.
+17	IN	PTR	client7.group5.lab.
+18	IN	PTR	client8.group5.lab.
+19	IN	PTR	client9.group5.lab.
+20	IN	PTR	client10.group5.lab.
