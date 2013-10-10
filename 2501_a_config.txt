@@ -31,7 +31,6 @@ exit
 
 router ospf 1
 network 10.2.8.4 0.0.0.3 area 0
-network 10.2.8.8 0.0.0.3 area 0
 network 10.2.8.16 0.0.0.15 area 0
 
 copy running-config startup-config
