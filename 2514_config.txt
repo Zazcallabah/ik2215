@@ -8,12 +8,10 @@
 # - How do you send parameters (after reload > no)
 # - Loopback 0 address is not defined yet (placeholder: "....")
 
-#start
+#make sure to start from a clean router config by typing 'erase startup-config' and 'reload'
+#dont do the auto configuration or auto install
 
-
-enable
-erase startup-config
-reload
+# paste the following into the Router> prompt
 
 enable
 configure terminal
@@ -41,24 +39,27 @@ ip address 10.2.8.2 255.255.255.252
 no shutdown
 exit
 
-ip multicast routing
+ip multicast-routing
 interface loopback0
 ip address 10.2.8.34 255.255.255.255
 no shutdown
-ip pim spare-dense-mode
+ip pim sparse-dense-mode
 exit
 
-router-id 10.2.8.34
 router ospf 1
+router-id 10.2.8.34
 network 10.2.8.0 0.0.0.3 area 0
 network 10.2.8.4 0.0.0.3 area 0
 network 10.2.0.0 0.0.0.255 area 0
 network 10.2.8.8 0.0.0.3 area 0
 network 10.2.8.34 0.0.0.0 area 0
 
-ip msdp peer .... connect-source loopback0
-ip msdp mesh-group isp2MeshGroup ....
-ip msdp originatoor-id loopback0
 
+ip pim rp-address 10.2.8.34
+
+exit
 
 copy running-config startup-config
+
+exit
+
