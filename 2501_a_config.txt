@@ -51,3 +51,4 @@ exit
 copy running-config startup-config
 
 
+exit
