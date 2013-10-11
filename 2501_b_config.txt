@@ -16,7 +16,7 @@ interface eth1
 ip address 10.2.8.18 255.255.255.240
 standby 100 timers 3 10
 standby 100 priority 200 preempt
-standby 100 authentication group2 //COMMENT: group2 is the password
+standby 100 authentication group2
 standby 100 ip 10.2.8.19
 standby 100 track eth0
 no shutdown
