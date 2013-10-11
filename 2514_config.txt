@@ -19,12 +19,14 @@ configure terminal
 interface s0
 ip address 10.2.8.9 255.255.255.252
 clockrate 64000
+ip pim sparse-mode
 no shutdown
 exit
 
 interface s1
 ip address 10.2.8.5 255.255.255.252
 clockrate 64000
+ip pim sparse-mode
 no shutdown
 exit
 
@@ -32,10 +34,12 @@ interface eth0
 ip address 10.2.0.1 255.255.255.0
 no shutdown
 ip helper-address 10.2.8.22
+ip pim sparse-mode
 exit
 
 interface eth1
 ip address 10.2.8.2 255.255.255.252
+ip pim sparse-mode
 no shutdown
 exit
 
@@ -43,8 +47,10 @@ ip multicast-routing
 interface loopback0
 ip address 10.2.8.34 255.255.255.255
 no shutdown
-ip pim sparse-dense-mode
+ip pim sparse-mode
 exit
+
+ip default-network 10.2.8.0
 
 router ospf 1
 router-id 10.2.8.34

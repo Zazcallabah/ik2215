@@ -20,16 +20,19 @@ configure terminal
 
 interface smart serial 0
 ip address 10.0.16.6 255.255.255.252
+ip pim sparse-mode
 no shutdown
 exit
 
 interface smart serial 
 ip address
+ip pim sparse-mode
 no shutdown
 exit
 
 interface FastEthernet0/0
 ip address 10.2.8.1 255.255.255.252
+ip pim sparse-mode
 no shutdown
 exit
 
@@ -50,9 +53,10 @@ ip pim rp-address 10.2.8.34
 
 copy running-config startup-config
 
-//Not tested
 router bgp 12
 neighbor 10.0.16.5 remote-as 1
 redistribute ospf 1
+network 10.2.0.0 mask 255.255.255.0
+network 10.2.8.16 mask 255.255.255.240
 
 
