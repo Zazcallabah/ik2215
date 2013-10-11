@@ -6,12 +6,13 @@
 
 #Open issues:
 # - How do you send parameters (after reload > no)
-#start
 
 
-enable
-erase startup-config
-reload
+#make sure to start from a clean router config by typing 'erase startup-config' and 'reload'
+#dont do the auto configuration or auto install
+
+# paste the following into the Router> prompt
+
 
 enable
 configure terminal
@@ -31,17 +32,22 @@ ip address 10.2.8.6 255.255.255.252
 no shutdown
 exit
 
-ip multicast routing
+ip multicast-routing
 interface lo0
 ip address 10.2.8.35 255.255.255.255
 no shutdown
 ip pim sparse-mode
 exit
 
-router-id 10.2.8.35
 router ospf 1
+router-id 10.2.8.35
 network 10.2.8.4 0.0.0.3 area 0
 network 10.2.8.16 0.0.0.15 area 0
 network 10.2.8.35 0.0.0.0 area 0
 
+exit
+exit
+
 copy running-config startup-config
+
+
