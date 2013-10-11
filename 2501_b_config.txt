@@ -44,5 +44,6 @@ ip address 10.2.8.36 255.255.255.255
 no shutdown
 ip pim sparse-mode
 exit
+ip pim rp-address 10.2.8.34 
 
 copy running-config startup-config
