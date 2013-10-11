@@ -4,14 +4,10 @@
 #team: 2
 #descr: This is the router configuration for router 2501_b wich is the standby router of the virtual router 10.2.8.19. To configure the router, copy the code after the "start" comment and paste it to the minicom terminal, which is connected to the router 2501_b. (Actually, i'm not sure if it works like this but i suppose??)
 
-#Open issues:
-# - How do you send parameters (after reload > no)
-#start
+#make sure to start from a clean router config by typing 'erase startup-config' and 'reload'
+#dont do the auto configuration or auto install
 
-
-enable
-erase startup-config
-reload
+# paste the following into the Router> prompt
 
 enable
 configure terminal
