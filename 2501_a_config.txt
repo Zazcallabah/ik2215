@@ -20,7 +20,7 @@ configure terminal
 interface eth0
 ip address 10.2.8.17 255.255.255.240
 standby 100 timers 3 10
-standby 100 priority 200 preempt
+standby 100 priority 205 preempt
 standby 100 authentication group2
 standby 100 ip 10.2.8.19
 standby 100 track serial 0
@@ -44,11 +44,12 @@ router-id 10.2.8.35
 network 10.2.8.4 0.0.0.3 area 0
 network 10.2.8.16 0.0.0.15 area 0
 network 10.2.8.35 0.0.0.0 area 0
+ip pim rp-address 10.2.8.34 
 
-exit
 exit
 
 copy running-config startup-config
 
 
 exit
+
