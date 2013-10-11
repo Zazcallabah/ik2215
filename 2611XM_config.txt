@@ -44,6 +44,9 @@ router ospf 1
 router-id 10.2.8.33
 network 10.2.8.0 0.0.0.3 area 0
 network 10.2.8.33 0.0.0.0 area 0
+exit
+
+ip pim rp-address 10.2.8.34
 
 copy running-config startup-config
 
