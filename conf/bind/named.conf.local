@@ -6,21 +6,9 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-//zone "cdn.lab" { type master; file "/etc/bind/db.cdn.lab"; };
-//zone "group1.lab" { type master; file "/etc/bind/db.group1.lab"; };
-//zone "group2.lab" { type master; file "/etc/bind/db.group2.lab"; };
-//zone "group3.lab" { type master; file "/etc/bind/db.group3.lab"; };
-//zone "group4.lab" { type master; file "/etc/bind/db.group4.lab"; };
-//zone "group5.lab" { type master; file "/etc/bind/db.group5.lab"; };
-//zone "group6.lab" { type master; file "/etc/bind/db.group6.lab"; };
-zone "isp2.lab" {type master; file "/ets/bind/db.isp2.lab"; };
-
-
-//zone "1.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.1"; };
-//zone "2.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.2"; };
-//zone "3.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.3"; };
-//zone "4.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.4"; };
-//zone "5.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.5"; };
-//zone "6.168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168.6"; };
-zone "0.2.10.in-addr.arpa" { type master; file "/etc/bind/db.10.2.0"; };
-
+zone "isp2.lab" { 
+	type master;
+	file "/etc/bind/db.isp2.lab";
+	allow-query {any;};
+	notify yes;
+};

@@ -5,19 +5,36 @@
 ;
 $TTL	86400
 @	IN	SOA	ns.isp2.lab. postmaster.isp2.lab. (
-			      1		; Serial
+			      6		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			  86400 )	; Negative Cache TTL
 ;
-@			IN	NS		ns.isp2.lab.
-ns			IN	A		10.2.8.22
-mail		IN 	A   	10.2.8.23
-isp2.lab	MX	10		mail.isp2.lab.
-smtp		IN 	CNAME	isp2.lab
-imap		IN 	CNAME	isp2.lab
-vpn			IN 	A 		10.2.8.23
-www			IN 	A 		10.2.8.20
 
+;
+; Nameservers
+;
 
+isp2.lab.		IN       NS       ns.isp2.lab.
+;?? isp2.lab.		IN	 NS	  ns.lab.
+;
+; Mailserver
+;
+mail            IN      A        10.2.8.22
+smtp            IN      CNAME    isp2.lab.
+imap            IN      CNAME    isp2.lab.
+isp2.lab.	IN      MX   10  mail.isp2.lab.
+;
+; Nodes in domain
+;
+ns.isp2.lab.			IN      A        10.2.8.22
+isp.lab.			IN      A        10.2.8.20
+www                             IN      A        10.2.8.20
+dhcp                            IN      A        10.2.8.21
+vpn                             IN      A        10.2.8.23
+www                             IN      A        10.2.8.20
+
+20.8.2.10.in-addr.arpa.		IN      PTR      isp2.lab.
+;add ptr(s)
+;recv                            IN      CNAME    isp2.lab.
