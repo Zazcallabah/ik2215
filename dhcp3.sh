@@ -15,5 +15,9 @@ cp ./conf/dhcpd.conf /etc/dhcp3/dhcpd.conf
 ifconfig eth0 10.2.8.22 netmask 255.255.255.240
 route add default gw 10.2.8.19
 
+# Set default gateway
+
+route add default gw 10.2.8.19
+
 # Start the service
 /etc/init.d/isc-dhcp-server start
