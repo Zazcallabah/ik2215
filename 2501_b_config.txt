@@ -31,17 +31,18 @@ ip address 10.2.8.10 255.255.255.252
 no shutdown
 exit
 
-ip multicast routing
+
+router ospf 1
+router-id 10.2.8.36
+network 10.2.8.8 0.0.0.3 area 0
+network 10.2.8.16 0.0.0.15 area 0
+network 10.2.8.36 0.0.0.0 area 0
+
+ip multicast-routing
 interface lo0
 ip address 10.2.8.36 255.255.255.255
 no shutdown
 ip pim sparse-mode
 exit
-
-router-id 10.2.8.36
-router ospf 1
-network 10.2.8.8 0.0.0.3 area 0
-network 10.2.8.16 0.0.0.15 area 0
-network 10.2.8.36 0.0.0.0 area 0
 
 copy running-config startup-config
