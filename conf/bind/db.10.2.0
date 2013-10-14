@@ -1,0 +1,16 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns.isp2.lab. postmaster.isp2.lab. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.isp2.lab.
+1	IN	PTR	ns.group1.lab.
+2   IN  PTR	mail.isp2.lab
+3	IN 	PTR	vpn.isp2.lab
+4	IN 	PTR	www.isp2.lab
