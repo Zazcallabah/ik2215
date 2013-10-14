@@ -9,15 +9,23 @@ then
 fi
 
 # Copy the configuration files to server
+cp ./conf/dhcpd.conf /etc/dhcp/dhcpd.conf
 cp ./conf/dhcpd.conf /etc/dhcp3/dhcpd.conf
 
-# configure static ip for dhcp server
-ifconfig eth0 10.2.8.22 netmask 255.255.255.240
-route add default gw 10.2.8.19
 
-# Set default gateway
+#remove config for eth0 and place the result in interfaces.tmp
+sed '/iface eth0/d' /etc/network/interfaces > interfaces.tmp
 
-route add default gw 10.2.8.19
+#add static config for eth0 to interfaces.tmp
+echo 'iface eth0 inet static
+address 10.2.8.22
+netmask 255.255.255.240
+gateway 10.2.8.19' >> interfaces.tmp
+
+#backup old network config and
+#replace network config with our modified config
+cp /etc/network/interfaces /etc/network/interfaces.backup
+cp interfaces.tmp /etc/network/interfaces
 
 # Start the service
-/etc/init.d/isc-dhcp-server start
+service isc-dhcp-server start
