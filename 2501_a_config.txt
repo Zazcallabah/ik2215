@@ -25,11 +25,13 @@ standby 100 authentication group2
 standby 100 ip 10.2.8.19
 standby 100 track serial 0
 no shutdown
+ip pim sparse-mode
 exit
 
 interface s0
 ip address 10.2.8.6 255.255.255.252
 no shutdown
+ip pim sparse-mode
 exit
 
 ip multicast-routing
@@ -38,6 +40,8 @@ ip address 10.2.8.35 255.255.255.255
 no shutdown
 ip pim sparse-mode
 exit
+
+ip default-network 10.2.8.4
 
 router ospf 1
 router-id 10.2.8.35
