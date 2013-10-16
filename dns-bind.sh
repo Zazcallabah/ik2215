@@ -6,7 +6,9 @@ then
 	#install service
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get -q -y install bind9
+	apt-get -q -y install dnsutils
 fi
+
 
 # copy configuration files
 cp ./conf/bind/db.isp2.lab /etc/bind/
