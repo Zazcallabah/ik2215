@@ -21,7 +21,7 @@ isp2.lab.		IN       NS       ns.isp2.lab.
 ;
 ; Mailserver
 ;
-mail            IN      A        10.2.8.22
+mail            IN      A        10.2.8.23
 smtp            IN      CNAME    isp2.lab.
 imap            IN      CNAME    isp2.lab.
 isp2.lab.	IN      MX   10  mail.isp2.lab.
@@ -29,7 +29,7 @@ isp2.lab.	IN      MX   10  mail.isp2.lab.
 ; Nodes in domain
 ;
 ns.isp2.lab.			IN      A        10.2.8.22
-isp.lab.			IN      A        10.2.8.20
+isp.lab.			IN      A        10.2.8.23
 www                             IN      A        10.2.8.20
 dhcp                            IN      A        10.2.8.21
 vpn                             IN      A        10.2.8.23
