@@ -16,6 +16,7 @@
 enable
 configure terminal
 
+ip multicast-routing
 interface s0
 ip address 10.2.8.9 255.255.255.252
 clockrate 64000
@@ -43,7 +44,6 @@ ip pim sparse-mode
 no shutdown
 exit
 
-ip multicast-routing
 interface loopback0
 ip address 10.2.8.34 255.255.255.255
 no shutdown

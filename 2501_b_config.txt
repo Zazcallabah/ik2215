@@ -12,6 +12,7 @@
 enable
 configure terminal
 
+ip multicast-routing
 interface eth0
 ip address 10.2.8.18 255.255.255.240
 standby 100 timers 3 10
@@ -28,7 +29,6 @@ no shutdown
 ip pim sparse-mode
 exit
 
-ip multicast-routing
 interface lo0
 ip address 10.2.8.36 255.255.255.255
 no shutdown
