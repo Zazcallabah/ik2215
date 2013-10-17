@@ -36,11 +36,7 @@ www                             IN      A        10.2.8.20
 
 ;;Clients
 
-client1				IN	A	 10.2.0.2
-client2				IN	A	 10.2.0.3
-client3				IN	A	 10.2.0.4
-client4				IN	A	 10.2.0.5
-client5				IN	A	 10.2.0.6
+client1				IN	A	 10.2.0.
 
 ;Routers
 
