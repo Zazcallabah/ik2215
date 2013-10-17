@@ -20,13 +20,11 @@ configure terminal
 
 interface serial 0/0
 ip address 10.0.16.6 255.255.255.252
-ip pim sparse-mode
 no shutdown
 exit
 
 interface serial 0/1 
 ip address 10.1.3.22 255.255.255.252
-ip pim sparse-mode
 no shutdown
 exit
 
