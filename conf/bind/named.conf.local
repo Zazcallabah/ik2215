@@ -9,6 +9,7 @@
 zone "isp2.lab" { 
 	type master;
 	file "/etc/bind/db.isp2.lab";
+	allow-transfer {10.0.0.11; 10.0.0.21;};
 	allow-query {any;};
 	notify yes;
 };
