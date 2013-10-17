@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+
+<body>
+
+<div>
+
+<h1>IK2215 Advanced Internetworking</h1>
+
+<h1>ISP Project, Group 2</h1>
+
+<p>Group Members:</p>
+
+<ul>
+<li>Peter Hamberg &lt;<a href="mailto:zaz@kth.se">zaz@kth.se</a>&gt;</li>
+<li>Ali Sabet &lt;<a href="mailto:asabet@kth.se">asabet@kth.se</a>&gt;</li> 
+<li>Soumya Parida &lt;<a href="mailto:parida@kth.se">parida@kth.se</a>&gt;</li>
+<li>Oriol Piñol Piñol &lt;<a href="mailto:oriolpp@kth.se">oriolpp@kth.se</a>&gt;</li>
+<li>Khalid Zerouali &lt;<a href="mailto:khalidz@kth.se">khalidz@kth.se</a>&gt;</li> 
+<li>Joel Rolli &lt;<a href="mailto:jrolli@kth.se">jrolli@kth.se</a>&gt;</li> 
+<li>Mattias Holmgren &lt;<a href="mailto:mattholm@kth.se">mattholm@kth.se</a>&gt;</li>
+</ul>
+
+</div>
+
+<div >
+
+<h1 >1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detail network topology</h1>
+
+<h2>1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Required equipment</h2>
+
+<p>We will use the following equipment</p>
+<ul>
+<li>Cisco 2611XM</li>
+<li>Cisco 2514</li>
+<li>Cisco 2501 (x2)</li>
+<li>HP2524 switch (x2)</li>
+<li>Various laptops for running services and acting as hosts</li>
+</ul>
+<h2 >1.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Network map</h2>
+
+<p>Due to the limitations in the equipment (limited
+number of serial and ethernet ports), the following is one of the few possible
+implementations of the topology. Router 2611XM needs to be the one connected to
+the ISP and the other AS because it’s the only one with Smart Serial
+interfaces. Both Cisco 2501 routers will act as an only one virtual router, one
+of them the active and the other in standby using HSRP, this way we can achieve
+fault-tolerant IP routing in the Service network. Router 2514 acts as an
+intermediate router and the clients’ network is connected to it. The VPN
+network is also shown in the diagram and is connected to the VPN server, the
+VPN server is running NAT to connect this network to our ISP’s network.</p>
+
+<img src="topology.png"/>
+
+<h2 >1.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ IP
+address allocation</h2>
+
+<p>The
+following table shows the IP allocation in our network:</p>
+
+<table border=1>
+ <tr >
+  <th>Device</th>
+  <th>Interface</th>
+  <th>IP address</th>
+  <th>Host Name</th>
+  </tr>
+ <tr>
+  <td >
+  2611XM
+  </td>
+  <td >
+  smarts0
+  </td>
+  <td >
+  10.0.16.6
+  </td>
+  <td >
+  r2611xm.isp2.lab
+  </td>
+ </tr>
+ <tr>
+  <td >
+  2611XM
+  </td>
+  <td >
+  f0
+  </td>
+  <td >
+  10.2.8.1
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2611XM
+  </td>
+  <td >
+  smarts1
+  </td>
+  <td >
+  10.1.3.22
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2611XM
+  </td>
+  <td >
+  lo0
+  </td>
+  <td >
+  10.2.8.33
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2514
+  </td>
+  <td >
+  s0
+  </td>
+  <td >
+  10.2.8.9
+  </td>
+  <td >
+  r2514.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2514
+  </td>
+  <td >
+  s1
+  </td>
+  <td >
+  10.2.8.5
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2514
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.0.1
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2514
+  </td>
+  <td >
+  eth1
+  </td>
+  <td >
+  10.2.8.2
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2514
+  </td>
+  <td >
+  lo0
+  </td>
+  <td >
+  10.2.8.34
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2501 a
+  </td>
+  <td >
+  s0
+  </td>
+  <td >
+  10.2.8.6
+  </td>
+  <td >
+  r2501-a.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2501 a
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.17
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2501 a
+  </td>
+  <td >
+  lo0
+  </td>
+  <td >
+  10.2.8.35
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2501 b
+  </td>
+  <td >
+  s0
+  </td>
+  <td >
+  10.2.8.10
+  </td>
+  <td >
+  r2501-b.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2501 b
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.18
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  2501 b
+  </td>
+  <td >
+  lo0
+  </td>
+  <td >
+  10.2.8.36
+  </td>
+  <td >
+  -
+  </td>
+ </tr>
+ <tr >
+  <td >
+  DNS server
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.22
+  </td>
+  <td >
+  ns.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  DHCP server
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.22
+  </td>
+  <td >
+  dhcp.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  web server 
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.20
+  </td>
+  <td >
+  www.isp2.lab
+  </td>
+ </tr>
+ <tr>
+  <td >
+  hosts
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.0.0-10.2.0.255
+  </td>
+  <td >
+  client1-clientxxx.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  vpn
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.23
+  </td>
+  <td >
+  vpn.isp2.lab
+  </td>
+ </tr>
+ <tr >
+  <td >
+  mail
+  </td>
+  <td >
+  eth0
+  </td>
+  <td >
+  10.2.8.23
+  </td>
+  <td >
+  mail.isp2.lab
+  </td>
+ </tr>
+</table>
+<h1>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Mandatory tasks</h1>
+<h2 >2.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Routing functionality</h2>
+<h3>2.1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dynamic
+IP routing</h3>
+<p>We have decided to use OSPF as our routing
+protocol. Some other possible dynamic routing protocols are RIP, EIGRP and
+IS-IS, EIGRP is a proprietary protocol used on Cisco equipment. The OSPF
+protocol has many advantages such as scalability, variable subnet addressing.
+The choice fell on OSPF because OSPF enabled networks tend to converge at a
+much faster rate than RIP networks in case of failure, RIP also only allows 15
+hops (if we need to expand our ISP in the future!) and uses resources because
+it sends full updates every period of time instead of only sending updates when
+needed like OSPF.</p>
+<p>For inter-domain routing, we will be using BGP
+to advertise our networks to the other ASes.</p>
+<h3 style='mso-list:l0 level3 lfo1'><span
+style='mso-fareast-font-family:Arial'><span >2.1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Fault-tolerant
+IP routing</h3>
+<p>As stated in the network topology section,
+fault-tolerant routing will be implemented to the routers connecting the service
+network to the rest of the network (Cisco 2501s). These routers support HSRP,
+and as seen in the topology map, they will act as a virtual router and if
+failure occurs (router down, cable unplugged, etc.), the standby router will
+start to act. HSRP is widely used on Cisco routers so there is a lot of
+documentation, it also uses automatic router backup which we found interesting.
+</p>
+<p>The failover can easily be tested by simply
+unplugging one of the serial interfaces.</p>
+<h3 style='mso-list:l0 level3 lfo1'><span
+style='mso-fareast-font-family:Arial'><span >2.1.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>PIM-SM
+IP Multicast routing</h3>
+<p>We will set the RP for the multicast routing to
+be the router that connects to the client’s network to the rest of the network
+(Cisco 2514), we decided to do this because the receivers of the multicasting
+will be the clients in the network so it reduces the traffic around the
+network. We will setup the RP to come with the loopback address.</p>
+<p>Multicast will be tested by using msend and
+mrecv with senders and receivers both in the server network, the client network
+or one in each network.</p>
+<h2 ><span
+
+>2.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Internet application services</h2>
+<h3 style='mso-list:l0 level3 lfo1'><span
+style='mso-fareast-font-family:Arial'><span >2.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>DNS</h3>
+<p>BIND9 is a very popular and common DNS server
+and we have group members with prior experience in setting-up BIND. One zone
+will be set up (isp2.lab), and we will forward requests we cannot resolve to
+the root DNS.</p>
+<p>Each device on the network will be properly
+named.</p>
+<p>DNS will be tested by using dig, nslookup or
+similar software from a client host.</p>
+<h3 style='mso-list:l0 level3 lfo1'><span
+style='mso-fareast-font-family:Arial'><span >2.2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>DHCP</h3>
+<p>We will use the isc-dhcp-server package on
+ubuntu.</p>
+<p>Servers used for services will get a fixed IP
+address based on their MAC address. Other clients will get a IP from the pool
+available on the DHCP server.</p>
+<p>DHCP will be tested by connecting a new host to
+the client switch and observing the IP address it is assigned.</p>
+<h3 style='mso-list:l0 level3 lfo1'><span
+style='mso-fareast-font-family:Arial'><span >2.2.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Web
+server</h3>
+<p>We will use the nginx web server on a ubuntu
+server. There are many available web server choices, Apache, nginx, lighttpd.
+They are most commonly divided into process-based and event-based web servers.
+Apache is a very popular process based server and nginx is event based, to give
+examples.</p>
+<p>Other than this there isn’t much that differs
+between the different software packages. Sure they all have different setup and
+configuration methods, but in the end for our purposes it won’t matter much
+what we choose. Performance is not very likely to be an issue for a web server
+that is only going to serve static pages.</p>
+<p>In the end we chose nginx because one group
+member likes it and the others don’t care enough to protest.</p>
+<p>Web server functionality will be tested by
+having any client in the network try to access www.isp2.lab using the browser
+of their choice.</p>
+<h1 style='mso-list:l0 level1 lfo1'><span
+
+>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Selective tasks</h1>
+<h2 ><span
+
+>3.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Mail Service </h2>
+
+<p style='text-align:justify'><i <span
+style='font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-bidi-font-family:Arial;mso-ansi-language:EN-US'>Software: Postfix (MTA) +
+Dovecot (MDA)</span></i><span style='font-size:10.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-bidi-font-family:Arial;mso-ansi-language:
+EN-US'></p>
+<p>Postfix will be used as a MTA to send and
+receive emails between mail servers and clients on the Internet, using SMTP.</p>
+<p>Dovecot as a MDA will be used in combination
+with Postfix to provide user accounts and mailboxes as well as providing secure
+access to those using encrypted connection (SSL/TLS).</p>
+<p>Users will have access to their mailbox over
+POP3 and IMAP. We keep POP3 for compatibility sake and for people who do not
+need IMAP functionality such as leaving mails on the server instead of deleting
+them (great for accessing emails on multiple devices). </p>
+<p>&nbsp;</p>
+<p>We will have one unix user managing virtual
+mailboxes (such as user1@isp2.lab or user2@isp2.lab) , this user is used as an
+intermediate between Postfix and Dovecot and will only have access to email
+data and nothing else.</p>
+<p>For authenticating our users we will use SASL
+(Simple Authentication and Security Layer) along with SHA256 password hashes
+stored in a simple text file, for example:</p>
+<pre>
+postmaster@isp2.lab:BPiZbadjt6lpsQKO4wB1aerzpjVIbdqyEdUSyFud+Ps=</pre
+<p>&nbsp;</p>
+<p>One great advantage is that we can keep track of
+mailboxes and passwords using only text files instead of having a complex MySQL
+backend to store our user names, user aliases and passwords, etc.</p>
+<p>&nbsp;</p>
+<p>Users will only have SMTP access if they are on
+the ISP networks or by using our VPN. </p>
+<p>This will be implemented by modifying
+postfix/main.cf to only allow our networks to use smtp (no open relay).</p>
+<p>POP3 and IMAP will be available even if the user
+is connecting from outside our network.</p>
+<p>The DNS server will of course contain an MX
+record pointing to the email server.</p>
+<p>There is another group doing email as a
+selective service, and we will be able to demonstrate the functionality by
+sending and receiving email to and from them. And also by sending mails between
+users on our ISP.</p>
+<h2 ><span
+
+>3.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>VPN</h2>
+<p>Software: OpenVPN</p>
+<p>- Routed (TUN) device, using NAT with iptables
+on the VPN server to connect our client subnet to the Internet</p>
+<p>- Can connect to this VPN using certificates
+issued by our CA, no passwords required.</p>
+<p>- Authentication encrypted with TLS</p>
+<p>- Data encrypted with AES-256-CBC (AES with a
+256 bits key and Cipher
+Block Chaining), we choose this cipher because 256 is the maximum amount of
+bits you can use for OpenVPN right now.</p>
+<p>&nbsp;</p>
+<p>OpenVPN is free, open source and well secured
+compared to PPTP for example, another popular VPN protocol.</p>
+<p>The VPN clients’ subnet will be 11.2.0.0/24, we
+are assuming that we have at most the same number of VPN clients as our ISP
+clients, so a /24 for each network.</p>
+<p>We created five test user accounts the
+demonstration, there is one folder per account containing:</p>
+<p>-client.ovpn, the client configuration file used
+by Windows and Android OpenVPN clients for example, for Ubuntu we need to enter
+the configuration manually in Network Manager</p>
+<p>-ta.key, a 2048 bits key used for TLS
+authentication</p>
+<p>-ca.crt, our CA certificate</p>
+<p>-ca.key, the CA’s private key</p>
+<p>-gr2-userX.crt, the client’s certificate...</p>
+<p>-gr2-userX.key, ...and the private key.</p>
+</body>
+</html>
