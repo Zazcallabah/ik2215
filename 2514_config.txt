@@ -30,6 +30,7 @@ ip pim sparse-mode
 no shutdown
 exit
 
+ip multicast-routing
 interface eth0
 ip address 10.2.0.1 255.255.255.0
 no shutdown
@@ -43,7 +44,6 @@ ip pim sparse-mode
 no shutdown
 exit
 
-ip multicast-routing
 interface loopback0
 ip address 10.2.8.34 255.255.255.255
 no shutdown
